@@ -1,28 +1,35 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import Link from 'next/link';
-import Button from '@mui/material/Button';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import Stack from '@mui/material/Stack';
 import LogoutIcon from '@mui/icons-material/Logout';
+import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Stack from '@mui/material/Stack';
+import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
+import Link from 'next/link';
+import { useSnipcart } from 'use-snipcart';
 
-const pages = ['Home', 'Products', 'About us',"cart","login"];
+import * as React from 'react';
+
+const pages = ['Home', 'Products', 'About us', 'cart', 'login'];
 // const pages = [{name:"Home", path:"http://localhost:3000/home"}]
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
+  const { cart = {} } = useSnipcart();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -119,30 +126,42 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button>
-            <Link style={{color:"white"}} href="/Home">Home</Link>
+              <Link style={{ color: 'white' }} href="/Home">
+                Home
+              </Link>
             </Button>
             <Button>
-            <Link style={{color:"white"}} href="/Products">Products</Link>
+              <Link style={{ color: 'white' }} href="/Products">
+                Products
+              </Link>
             </Button>
 
             <Button>
-            <Link style={{color:"white"}} href="/Aboutus">About us</Link>
+              <Link style={{ color: 'white' }} href="/Aboutus">
+                About us
+              </Link>
             </Button>
-  
           </Box>
           <Box sx={{ flexGrow: 0 }}>
+            <Button
+              variant="contained"
+              className="snipcart-checkout"
+              endIcon={<AddShoppingCartIcon />}
+              >
+              cart
+              <span>${cart.subtotal?.toFixed(2)}</span>
+              
+            </Button>
 
-         <Button variant="contained" endIcon={<AddShoppingCartIcon />}>
-          
-            <Link href="/Cart">cart </Link>
-            </Button>
-          
+
             <Tooltip title="Logout">
-            
-            <Button variant="contained" color="error" endIcon={<LogoutIcon/>}>
-            <Link href="/Login"> Logout</Link>
-            </Button>
-            
+              <Button
+                variant="contained"
+                color="error"
+                endIcon={<LogoutIcon />}
+              >
+                <Link href="/Login"> Logout</Link>
+              </Button>
             </Tooltip>
           </Box>
         </Toolbar>
