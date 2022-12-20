@@ -9,6 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div>
     <Navbar/>
     <Sidebar/>
+    
   <Component {...pageProps} />
   </div>
   )
