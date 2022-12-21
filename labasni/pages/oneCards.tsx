@@ -12,7 +12,7 @@ import { useState} from 'react'
 import Backdrop from '@mui/material/Backdrop';
 import Link from '@mui/material/Link';
 
-export default function OneProduct({e}){
+export default function OneProduct({e,i}){
 const [open, setOpen] = React.useState(false);
 
 const handleToggle = () => {
@@ -22,9 +22,9 @@ const handleToggle = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  return (  <Grid xs={2.5} >
+  return (  <Grid  xs={2.5} >
         
-         <Card sx={{ maxWidth: 250 } }
+         <Card className="hoverGrid" sx={{ maxWidth: 250 } }
          
          >
       <CardMedia
@@ -73,7 +73,15 @@ const handleToggle = () => {
   </Backdrop>
       <CardActions>
         <Button size="small">💖</Button>
-        <Button size="small"><Link href="/Cart">Buy</Link></Button>
+  
+        
+        
+        <button className="snipcart-add-item" data-item-id={e._id} data-item-image={e.imageUrl} data-item-name={e.name} data-item-price={e.price}>
+  Add to cart
+</button>
+
+<div hidden id="snipcart" data-api-key="MzMxN2Y0ODMtOWNhMy00YzUzLWFiNTYtZjMwZTRkZDcxYzM4">
+</div>
       </CardActions>
     </Card>
     

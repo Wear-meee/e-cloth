@@ -3,12 +3,12 @@ export default function Aboutus(){
   return <div>
     <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="/Home">LABASNI</a> SPORTS SHOP
+          Welcome to <a href="/Home"><img src="logo.png"id="logo"/></a> SPORTS SHOP
         </h1>
 
         <p className={styles.description}>
           WE START WOKING ON LABASNI SINCE 2021
-          <code className={styles.code}></code>.
+        
         </p>
 
        

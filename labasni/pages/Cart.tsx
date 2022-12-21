@@ -43,6 +43,14 @@ export default function Cart() {
         <Link href="/Product" >buy</Link>
         </Button>
           </div>
+          
+          <button className="snipcart-add-item" data-item-id="product-1" data-item-url="/" data-item-name="Product #1" data-item-price="10.99">
+  Add to cart
+</button>
+
+<div hidden id="snipcart" data-api-key="MzMxN2Y0ODMtOWNhMy00YzUzLWFiNTYtZjMwZTRkZDcxYzM4">
+</div>
+
 </div>
   )
 }

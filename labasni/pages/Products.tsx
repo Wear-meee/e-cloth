@@ -14,7 +14,7 @@ import Link from '@mui/material/Link';
 import OneProduct from './oneCards';
 
 export default function Products(){
-const [open, setOpen] = React.useState(false);
+const [open, setOpen] =useState(false);
 const [data,setData]=useState([])
 const [post,setpost]=useState([])
   function getData(){

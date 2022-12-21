@@ -1,3 +1,29 @@
+import {useState} from 'react'
+import Link from 'next/link';
+import React from 'react'
+
+
+export default function Navbar() {
+  return (
+    <>
+    <nav id="navPrin"> 
+      <img src="logo.png" id="logo"/>
+       <Link href="/Login"><h3 id="logOut">log out</h3></Link>
+       
+       <Link href="/Cart"><h3 ><img src="cart2.png"id="cart"/> </h3></Link>
+      <nav id="nav2">
+        <ul>
+          <Link href={{pathname:"/" ,query:{surname:"guizeni"}}}><li>Home</li></Link>
+          <Link href="/Products"><li>Products</li></Link>
+          <Link href="/Aboutus"><li>About us</li></Link>
+        </ul>
+      </nav>
+    </nav>
+    </>
+  )
+}
+
+/*
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -43,24 +69,7 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Labbesni
-          </Typography>
+          <a href="/"><img src="logo.png" id="logo"></img></a>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -115,7 +124,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            Labbesni
+            
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button>
@@ -150,4 +159,7 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default ResponsiveAppBar; */
+
+
+
