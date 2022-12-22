@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Navbar from "./Navbar"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 
    export default function Home() {
         return (
+          <>
+          <Navbar/>
           <Carousel>
             <div>
               <img src="https://cdn.britannica.com/50/213250-050-02322AA8/Nike-logo.jpg" />
@@ -30,7 +33,7 @@ import { Carousel } from 'react-responsive-carousel';
               <img src="https://cdn.about.puma.com/img/layout/Logo_PUMA-Cat_dark.svg"/>
               <p className="legend">PUMA</p>
             </div> */}
-          </Carousel>
+          </Carousel></>
         );
     }
 

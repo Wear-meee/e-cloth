@@ -1,6 +1,9 @@
 import styles from "../styles/Home.module.css";
+import Navbar from "./Navbar"
+
 export default function Aboutus(){
   return <div>
+    <Navbar/>
     <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="/Home"><img src="logo.png"id="logo"/></a> SPORTS SHOP

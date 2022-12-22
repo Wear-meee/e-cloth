@@ -55,7 +55,8 @@ async function handleSubmit(event:any){
     }
     else {
       router.push("/Home")
-       localStorage.setItem("token", user.data.token);
+     
+      localStorage.setItem("token", user.data.token);
       localStorage.setItem("id", user.data.id);
     
     }
@@ -135,5 +136,3 @@ async function handleSubmit(event:any){
     </ThemeProvider>
   );
 }
-
-export default {email,password};

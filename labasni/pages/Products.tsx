@@ -12,6 +12,7 @@ import {useEffect, useState} from 'react'
 import Backdrop from '@mui/material/Backdrop';
 import Link from '@mui/material/Link';
 import OneProduct from './oneCards';
+import Navbar from './Navbar';
 
 export default function Products(){
 const [open, setOpen] =useState(false);
@@ -32,6 +33,8 @@ const [post,setpost]=useState([])
   };
 
   return (
+    <>
+    <Navbar/>
     <Grid
   container 
   direction="row"
@@ -46,6 +49,7 @@ const [post,setpost]=useState([])
       <OneProduct e={e} key={i}/>
  
      )
-  })}</Grid>)
+  })}</Grid></>)
+  
   
 }

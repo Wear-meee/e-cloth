@@ -8,7 +8,7 @@ import { SnipcartProvider } from 'use-snipcart';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div>
-    <Navbar/>
+  
     <Sidebar/>
     <SnipcartProvider>
         <Component {...pageProps} />

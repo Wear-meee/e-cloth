@@ -1,19 +1,22 @@
 import {useState} from 'react'
 import Link from 'next/link';
 import React from 'react'
+import { useSnipcart } from 'use-snipcart';
+
 
 
 export default function Navbar() {
+ // const {cart} = useSnipcart();
   return (
     <>
     <nav id="navPrin"> 
-      <img src="logo.png" id="logo"/>
+      <Link href="/profile"><img src="logo.png" id="logo"/></Link>
        <Link href="/Login"><h3 id="logOut">log out</h3></Link>
        
-       <Link href="/Cart"><h3 ><img src="cart2.png"id="cart"/> </h3></Link>
+      <h3 ><img src="cart2.png" id="cart" className="snipcart-checkout" /></h3>  
       <nav id="nav2">
         <ul>
-          <Link href={{pathname:"/" ,query:{surname:"guizeni"}}}><li>Home</li></Link>
+          <Link href="/Home"><li>Home</li></Link>
           <Link href="/Products"><li>Products</li></Link>
           <Link href="/Aboutus"><li>About us</li></Link>
         </ul>

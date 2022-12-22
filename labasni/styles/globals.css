@@ -150,6 +150,7 @@ background: linear-gradient(335deg, rgba(220,220,233,1) 0%, rgba(244,244,251,1) 
 .hoverGrid:hover{
   background-color: rgba(0, 0, 0, 0.162);
   width: 500px;
+  box-shadow: 10px 10px 10px;
 
 }
 
@@ -167,7 +168,50 @@ background: linear-gradient(335deg, rgba(220,220,233,1) 0%, rgba(244,244,251,1) 
   background-color: #27b02c;
 }
 
+.snipcart-button-primary:hover{
+  background-color: rgb(78, 78, 78);
+}
 
+
+.carousel .thumbs-wrapper{
+  margin: -26px;
+  margin-top: -373px;
+  overflow: hidden;
+}
+
+.carousel .control-dots {
+  position: absolute;
+  bottom: 0;
+  margin: 387px 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.carousel .slide {
+  min-width: 100%;
+  /* margin: 0; */
+  position: relative;
+  text-align: center;
+}
+
+.carousel .slide .legend {
+  transition: all .5s ease-in-out;
+  position: absolute;
+  bottom: 432px;
+  left: 50%;
+  margin-left: -45%;
+  width: 90%;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.25;
+  transition: opacity .35s ease-in-out;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
