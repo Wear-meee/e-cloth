@@ -20,7 +20,7 @@ function Copyright(props: any) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright Â© '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="/Home">
         LABASNI
       </Link>{' '}
       {new Date().getFullYear()}
@@ -55,8 +55,10 @@ async function handleSubmit(event:any){
     }
     else {
       router.push("/Home")
-       localStorage.setItem("token", user.data.token);
+     
+      localStorage.setItem("token", user.data.token);
       localStorage.setItem("id", user.data.id);
+    
     }
   } catch (error) {
     console.log(error);
