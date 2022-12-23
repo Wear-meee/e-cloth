@@ -72,7 +72,7 @@ const handleToggle = () => {
       }
   </Backdrop>
       <CardActions>
-        <Button size="small">💖</Button>
+       
 
         <Button size="small"
         variant="outline-dark"
@@ -82,7 +82,7 @@ const handleToggle = () => {
         // data-item-description={e.description}
         data-item-image={e.imageUrl}
         data-item-name={e.name}
-        >Buy</Button>
+        >Add to Buy</Button>
 
       </CardActions>
     </Card>
