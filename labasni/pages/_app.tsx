@@ -14,14 +14,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <SnipcartProvider>
 
-    <Navbar/>
     <Sidebar/>
 
-    <SnipcartProvider>
+    
         <Component {...pageProps} />
-    </SnipcartProvider>
    
     <Footer />
+    </SnipcartProvider>
 
   </div>
   )
