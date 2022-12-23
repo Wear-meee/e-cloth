@@ -73,15 +73,17 @@ const handleToggle = () => {
   </Backdrop>
       <CardActions>
         <Button size="small">💖</Button>
-  
-        
-        
-        <button className="snipcart-add-item" data-item-id={e._id} data-item-image={e.imageUrl} data-item-name={e.name} data-item-price={e.price}>
-  Add to cart
-</button>
 
-<div hidden id="snipcart" data-api-key="MzMxN2Y0ODMtOWNhMy00YzUzLWFiNTYtZjMwZTRkZDcxYzM4">
-</div>
+        <Button size="small"
+        variant="outline-dark"
+        className="snipcart-add-item"
+        data-item-id={e._id}
+        data-item-price={e.price}
+        // data-item-description={e.description}
+        data-item-image={e.imageUrl}
+        data-item-name={e.name}
+        >Buy</Button>
+
       </CardActions>
     </Card>
     
