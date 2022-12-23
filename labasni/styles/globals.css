@@ -15,6 +15,204 @@ a {
   box-sizing: border-box;
 }
 
+#logo{
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:0;
+  transition: all 0.5s ease;
+}
+
+#logo:hover{
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:0;
+}
+
+
+
+#nav2{
+  text-decoration: none;
+  align-items: center;
+}
+
+#nav2 ul {
+  display: flex;
+  align-items: center;
+  
+}
+
+#nav2 ul li{
+    list-style-type: none;
+    display: flex;
+    margin:0 25px;
+    align-items: center;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+
+#nav2 ul li:hover{
+  font-weight: 50px;
+  color: rgb(133, 133, 133);
+  list-style-type: none;
+  display: flex;
+  font-size: 25px;
+  margin:0 25px;
+  align-items: center;
+}
+
+#navPrin{
+  background: rgb(220,220,233);
+background: linear-gradient(335deg, rgba(220,220,233,1) 0%, rgba(244,244,251,1) 57%, rgba(186,198,200,1) 90%);
+  padding:25px;
+  padding-right: 0;
+  margin-top: 0;
+  width: 100%;
+}
+
+#logOut{
+  color :red;
+  font-weight: bolder;
+  transition: all 0.5s ease;
+  display: flex;
+  float: right;
+  margin-right: 5%;
+
+}
+
+#logOut:hover{
+  color :rgb(46, 137, 0);
+  font-size:20px ;
+  font-weight: bolder;
+}
+
+#cart{
+  color :rgb(0, 0, 0);
+  font-weight: bolder;
+  transition: all 0.5s ease;
+  display: flex;
+  float: right;
+  margin-right: 5%;
+  width: 50px;
+}
+
+.snipcart-item-line--cart-edit .snipcart-item-line__image{
+  max-width: 100px;
+  max-height:300px;
+  margin-bottom: 20px;
+  border-radius: 2em;
+  box-shadow: 2px 2px 7px ;
+}
+
+.snipcart-button-primary{
+  background-color: black;
+}
+
+.snipcart-item-quantity__quantity{
+  margin-top: 10px;
+}
+
+.snipcart__font--subtitle-small, .snipcart__font--tiny{
+  font-size: 12px;
+  margin-top: 100px;
+  margin-bottom: 0;
+  font-weight: 800;
+
+}
+
+.snipcart-add-item{
+  background-color: black;
+  padding: 7px;
+  border-radius: 2em;
+}
+
+.snipcart__font--secondary{
+  font-weight: bold;
+}
+
+.snipcart-test-banner__message{
+  display:none;
+}
+
+
+.hoverGrid{
+  background-color: aliceblue;
+  transition: all 0.5s ease;
+  margin-bottom: 10%;
+  max-height: 600px;
+}
+
+
+
+.hoverGrid:hover{
+  background-color: rgba(0, 0, 0, 0.162);
+  width: 500px;
+  box-shadow: 10px 10px 10px;
+
+}
+
+
+.css-1vhaqj4-MuiButtonBase-root-MuiButton-root{
+  background-color: black;
+}
+
+.css-1vhaqj4-MuiButtonBase-root-MuiButton-root:hover{
+  background-color: rgb(0, 174, 52);
+  transition: all 0.5s ease;
+}
+
+.css-1999axt-MuiAvatar-root{
+  background-color: #27b02c;
+}
+
+.snipcart-button-primary:hover{
+  background-color: rgb(78, 78, 78);
+}
+
+
+.carousel .thumbs-wrapper{
+  margin: -26px;
+  margin-top: -373px;
+  overflow: hidden;
+}
+
+.carousel .control-dots {
+  position: absolute;
+  bottom: 0;
+  margin: 387px 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.carousel .slide {
+  min-width: 100%;
+  /* margin: 0; */
+  position: relative;
+  text-align: center;
+}
+
+.carousel .slide .legend {
+  transition: all .5s ease-in-out;
+  position: absolute;
+  bottom: 432px;
+  left: 50%;
+  margin-left: -45%;
+  width: 90%;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.25;
+  transition: opacity .35s ease-in-out;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

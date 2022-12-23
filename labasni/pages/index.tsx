@@ -2,9 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Sidebar from "./Sidebar"
+import { GetServerSideProps } from 'next'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Home() {
-  
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        Hello
+        <h1> Fuccckkkks </h1>
       </main>
 
       <footer className={styles.footer}>
@@ -31,3 +35,5 @@ export default function Home() {
     </div>
   )
 }
+
+

@@ -25,7 +25,7 @@ function Copyright(props: any) {
       {...props}
     >
       {'Copyright Â© '}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="/Home">
         LABASNI
       </Link>{' '}
       {new Date().getFullYear()}
@@ -50,20 +50,21 @@ export default function Login() {
     try {
       event.preventDefault();
 
-      const user = await axios.post('http://localhost:5000/api/users/login', {
-        email,
-        password,
-      });
-      if (email === 'admin@gmail.com') {
-        router.push('/Dashboard');
-      } else {
-        router.push('/Home');
-        localStorage.setItem('token', user.data.token);
-        localStorage.setItem('id', user.data.id);
-      }
-    } catch (error) {
-      console.log(error);
-      alert('bad cred');
+
+    const user = await axios.post("http://localhost:5000/api/users/login", {
+      email,
+      password,
+    })
+    if (email==="admin@gmail.com"){
+      router.push('/Dashboard')
+    }
+    else {
+      router.push("/Home")
+     
+      localStorage.setItem("token", user.data.token);
+      localStorage.setItem("id", user.data.id);
+    
+
     }
   }
 
