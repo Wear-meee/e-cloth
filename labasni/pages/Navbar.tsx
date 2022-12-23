@@ -9,6 +9,7 @@ export default function Navbar() {
  // const {cart} = useSnipcart();
   return (
     <>
+    
     <nav id="navPrin"> 
       <Link href="/profile"><img src="logo.png" id="logo"/></Link>
        <Link href="/Login"><h3 id="logOut">log out</h3></Link>
@@ -19,6 +20,7 @@ export default function Navbar() {
           <Link href="/Home"><li>Home</li></Link>
           <Link href="/Products"><li>Products</li></Link>
           <Link href="/Aboutus"><li>About us</li></Link>
+          
         </ul>
       </nav>
     </nav>
