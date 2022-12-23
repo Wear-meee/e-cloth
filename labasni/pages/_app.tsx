@@ -4,6 +4,8 @@ import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
 import PrivateRoute from "./privateRoute";
 import { SnipcartProvider } from 'use-snipcart';
+import Footer from "./Footer"
+
 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -14,10 +16,12 @@ export default function App({ Component, pageProps }: AppProps) {
 
     <Navbar/>
     <Sidebar/>
-    
-  <Component {...pageProps} />
-  </SnipcartProvider>
 
+    <SnipcartProvider>
+        <Component {...pageProps} />
+    </SnipcartProvider>
+   
+    <Footer />
 
   </div>
   )
