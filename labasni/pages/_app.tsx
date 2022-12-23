@@ -7,16 +7,22 @@ import { SnipcartProvider } from 'use-snipcart';
 import Footer from "./Footer"
 
 
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div>
-  
+
+      <SnipcartProvider>
+
+    <Navbar/>
     <Sidebar/>
+
     <SnipcartProvider>
         <Component {...pageProps} />
     </SnipcartProvider>
    
     <Footer />
+
   </div>
   )
 }

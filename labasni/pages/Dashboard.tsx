@@ -1,28 +1,27 @@
 //@ts-nocheck
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import ButtonBase from "@mui/material/ButtonBase";
-import axios, { AxiosResponse } from "axios";
-import { useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import FilledInput from "@mui/material/FilledInput";
-import InputAdornment from "@mui/material/InputAdornment";
-import { useRouter } from "next/router";
 import Alert from '@mui/material/Alert';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import ButtonBase from '@mui/material/ButtonBase';
+import FilledInput from '@mui/material/FilledInput';
+import FormControl from '@mui/material/FormControl';
+import Grid from '@mui/material/Grid';
+import InputAdornment from '@mui/material/InputAdornment';
+import InputLabel from '@mui/material/InputLabel';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import axios, { AxiosResponse } from 'axios';
+import { useRouter } from 'next/router';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
 
-
-const Img = styled("img")({
-  margin: "auto",
-  display: "block",
-  maxWidth: "100%",
-  maxHeight: "100%",
+const Img = styled('img')({
+  margin: 'auto',
+  display: 'block',
+  maxWidth: '100%',
+  maxHeight: '100%',
 });
 
 interface Products {
@@ -37,13 +36,13 @@ interface Products {
 
 const Dashboard = (event: any) => {
   const [products, setProducts] = useState<Products[]>([]);
-  const [name, setName] = useState("");
-  const [brand, setBrand] = useState("");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
-  const [size, setSize] = useState("");
-  const [color, setColor] = useState("");
- 
+  const [name, setName] = useState('');
+  const [brand, setBrand] = useState('');
+  const [price, setPrice] = useState('');
+  const [image, setImage] = useState('');
+  const [size, setSize] = useState('');
+  const [color, setColor] = useState('');
+
   const router = useRouter();
   // async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
   //   event.preventDefault();
@@ -66,30 +65,36 @@ const Dashboard = (event: any) => {
   const addProduct = async (event: any) => {
     try {
       event.preventDefault();
-      const user = await axios
-        .post("http://localhost:5000/api/clothes", {
-          name: name,
-          brand: brand,
-          price: price,
-          imageUrl: image,
-          size: size,
-          color: color,
-        })
-       if (user) {
-      router.push("/Dashboard")
-    localStorage.setItem("token", user.data.token);
-    localStorage.setItem("id", user.data.id);}
+      const user = await axios.post('http://localhost:5000/api/clothes', {
+        name: name,
+        brand: brand,
+        price: price,
+        imageUrl: image,
+        size: size,
+        color: color,
+      });
+      if (user) {
+        router.push('/Dashboard');
+        localStorage.setItem('token', user.data.token);
+        localStorage.setItem('id', user.data.id);
+      }
     } catch (error) {
       console.log(error);
     }
   };
+  // const update = async (event: any) => {
+  // 	axios.put(`http://localhost:5000/api/clothes/${e._id}`).then((res) => {
+  // 		console.log(res);
+  // 		window.location.reload();
+  // 	});
+  // };
   //  const deleteProduct =async (event:any)=>{
   //   axios.delete(`http://localhost:5000/api/clothes${_id}`);
   //  }
 
   useEffect(() => {
     axios
-      .get<Products[]>("http://localhost:5000/api/clothes")
+      .get<Products[]>('http://localhost:5000/api/clothes')
       .then((response: AxiosResponse) => {
         // console.log(products);
         setProducts(response.data);
@@ -100,7 +105,7 @@ const Dashboard = (event: any) => {
       <Box
         component="form"
         sx={{
-          "& .MuiTextField-root": { m: 1, width: "25ch" },
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
         }}
         noValidate
         autoComplete="off"
@@ -124,8 +129,9 @@ const Dashboard = (event: any) => {
             id="brand"
             label="Brand"
             defaultValue="Enter Your Brand Name"
-            onChange={(el) => {setBrand(el.target.value)
-            console.log(brand)}}
+            onChange={(el) => {
+              setBrand(el.target.value);
+            }}
           />
 
           <TextField
@@ -143,8 +149,10 @@ const Dashboard = (event: any) => {
             label="Color"
             defaultValue="Choose your color"
             helperText="Choose your color"
-            onChange={(el) => {setColor(el.target.value)
-            console.log(color)}}
+            onChange={(el) => {
+              setColor(el.target.value);
+              console.log(color);
+            }}
           />
           <TextField
             value={size}
@@ -174,12 +182,13 @@ const Dashboard = (event: any) => {
             <Paper
               sx={{
                 p: 2,
-                margin: "auto",
+                margin: 'auto',
                 maxWidth: 500,
                 flexGrow: 1,
                 backgroundColor: (theme) =>
-                  theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+                  theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
               }}
+              key={e._id}
             >
               <Grid container spacing={2}>
                 <Grid item>
@@ -206,17 +215,44 @@ const Dashboard = (event: any) => {
                     </Grid>
                     <Grid item>
                       <Button
-                        sx={{ cursor: "pointer" }}
+                        sx={{ cursor: 'pointer' }}
                         variant="body2"
                         onClick={() => {
-                          axios.delete(
-                            `http://localhost:5000/api/clothes/${e._id}`
-                          ).then((res)=> {console.log(res)
-                          window.location.reload()})
-                          
+                          axios
+                            .delete(
+                              `http://localhost:5000/api/clothes/${e._id}`
+                            )
+                            .then((res) => {
+                              console.log(res);
+                              window.location.reload();
+                            });
                         }}
                       >
                         Remove
+                      </Button>
+                      <Button
+                        sx={{ cursor: 'pointer' }}
+                        variant="body2"
+                        onClick={() => {
+                          console.log(name, brand, price, size);
+                          axios
+                            .put(`http://localhost:5000/api/clothes/${e._id}`, {
+                              name,
+                              price,
+                              image,
+                              size,
+                              color,
+                            })
+                            .then((res) => {
+                              console.log(res);
+                              window.location.reload();
+                            })
+                            .catch((err) => {
+                              console.log(err);
+                            });
+                        }}
+                      >
+                        update
                       </Button>
                     </Grid>
                   </Grid>
